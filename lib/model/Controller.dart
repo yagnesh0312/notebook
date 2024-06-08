@@ -1,7 +1,7 @@
 import 'dart:async';
 
-import 'package:employee_database/model/Note.dart';
-import 'package:employee_database/model/dbHelper.dart';
+import 'package:notebook/model/Note.dart';
+import 'package:notebook/model/dbHelper.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 
@@ -22,24 +22,31 @@ class DBController extends GetxController {
 
   oninsert(NoteModel n) {
     DBHelper.addNote(n);
+    getData();
     update();
   }
 
   ondelete(NoteModel n) {
     DBHelper.deleteNote(n);
+    getData();
     update();
   }
 
   onUpdate(NoteModel n) {
     DBHelper.updateNote(n);
+    getData();
     update();
   }
-  background(){
+
+  background() {
     int prev = notes.length;
-    Timer.periodic(Duration(milliseconds: 500), (timer) async{
+
+    Timer.periodic(Duration(milliseconds: 500), (timer) async {
       DBHelper.getNote().then((value) {
-        if(value.length != prev){
+        if (value.length != prev) {
+          prev = value.length;
           getData();
+          print("DB Update");
         }
       });
     });

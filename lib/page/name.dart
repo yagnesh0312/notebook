@@ -1,5 +1,5 @@
-import 'package:employee_database/model/color.dart';
-import 'package:employee_database/page/home.dart';
+import 'package:notebook/model/color.dart';
+import 'package:notebook/page/home.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';

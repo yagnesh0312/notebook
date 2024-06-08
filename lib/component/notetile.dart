@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:employee_database/model/Note.dart';
-import 'package:employee_database/model/color.dart';
+import 'package:notebook/model/Note.dart';
+import 'package:notebook/model/color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_quill/flutter_quill.dart';
 import 'package:get/get.dart';

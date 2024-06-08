@@ -1,4 +1,4 @@
-import 'package:employee_database/datatype/type.dart';
+import 'package:notebook/datatype/type.dart';
 
 class NoteModel {
   String? id;
@@ -17,7 +17,8 @@ class NoteModel {
   NoteModel.fromMap(MyMap map){
     id = map["id"];
     title = map["title"];
-    time = DateTime.fromMillisecondsSinceEpoch(map["time"]);
+    // print(map["time"]);
+    time = DateTime.fromMillisecondsSinceEpoch(map['time']);
     content = map["content"];
   }
 }

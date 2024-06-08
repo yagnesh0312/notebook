@@ -1,18 +1,21 @@
-import 'package:employee_database/datatype/type.dart';
-import 'package:employee_database/model/Note.dart';
+import 'package:notebook/datatype/type.dart';
+import 'package:notebook/model/Note.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class DBHelper {
   static const String table = "notes";
   static Future<Database> getDB() async {
-    // databaseExists(join(await getDatabasesPath(), "notes.db"));
+    // if(await databaseExists(join(await getDatabasesPath(), "notes.db"))){
+    //   await deleteDatabase(join(await getDatabasesPath(), "notes.db"));
+    //   print("db deleted");
+    // }
     Database db = await openDatabase(
       join(await getDatabasesPath(), "notes.db"),
       version: 1,
       onCreate: (db, version) {
         db.execute(
-            "Create table notes(id text primary key,title text,content text,time REAL)");
+            "Create table notes(id text primary key,title text,content text,time INTEGER)");
       },
     );
     return db;

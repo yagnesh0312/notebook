@@ -1,5 +1,5 @@
-import 'package:employee_database/page/home.dart';
-import 'package:employee_database/page/name.dart';
+import 'package:notebook/page/home.dart';
+import 'package:notebook/page/name.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 

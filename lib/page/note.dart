@@ -1,7 +1,7 @@
-import 'package:employee_database/datatype/type.dart';
-import 'package:employee_database/model/Note.dart';
-import 'package:employee_database/model/color.dart';
-import 'package:employee_database/model/dbHelper.dart';
+import 'package:notebook/datatype/type.dart';
+import 'package:notebook/model/Note.dart';
+import 'package:notebook/model/color.dart';
+import 'package:notebook/model/dbHelper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

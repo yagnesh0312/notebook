@@ -1,4 +1,4 @@
-package com.example.employee_database
+package com.example.notebook
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,9 +1,10 @@
 import 'dart:convert';
 
-import 'package:employee_database/datatype/type.dart';
-import 'package:employee_database/model/Note.dart';
-import 'package:employee_database/model/color.dart';
-import 'package:employee_database/model/dbHelper.dart';
+import 'package:notebook/datatype/type.dart';
+import 'package:notebook/model/Controller.dart';
+import 'package:notebook/model/Note.dart';
+import 'package:notebook/model/color.dart';
+import 'package:notebook/model/dbHelper.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -19,6 +20,7 @@ class NotePage extends StatelessWidget {
   GlobalKey<FormState> _formKey = GlobalKey();
   var _controller = quill.QuillController.basic();
   final _titleController = TextEditingController();
+  var dbController = Get.put(DBController());
   @override
   FocusNode f = FocusNode();
   Widget build(BuildContext context) {
@@ -163,7 +165,7 @@ class NotePage extends StatelessWidget {
                                 _controller.document.toDelta().toJson()),
                             title: _titleController.text.trim(),
                             time: DateTime.now());
-                        DBHelper.addNote(n);
+                        dbController.oninsert(n);
                         Get.back();
                       }
                       if (openType == NoteOpenMode.update) {
@@ -173,7 +175,7 @@ class NotePage extends StatelessWidget {
                                 _controller.document.toDelta().toJson()),
                             title: _titleController.text.trim(),
                             time: DateTime.now());
-                        DBHelper.updateNote(n);
+                        dbController.onUpdate(n);
                         Get.back();
                       }
                     } else {
@@ -203,7 +205,7 @@ class NotePage extends StatelessWidget {
                           color: backgroundColor,
                         ),
                         onTap: () {
-                          DBHelper.deleteNote(note!);
+                          dbController.ondelete(note!);
                           Get.back();
                         },
                       )

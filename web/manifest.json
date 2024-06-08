@@ -1,6 +1,6 @@
 {
-    "name": "employee_database",
-    "short_name": "employee_database",
+    "name": "notebook",
+    "short_name": "notebook",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
